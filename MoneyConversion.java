@@ -17,8 +17,10 @@ public class MoneyConversion {
    */
       public static void main (String[] arg){
 
-         // Declare the object and initialize with
-         // predefined standard input object
+         /**
+         * Declare the object and initialize with
+         * predefined standard input object
+         */
          Scanner scan = new Scanner (System.in);
 
          double monetaryAmt;
@@ -32,15 +34,23 @@ public class MoneyConversion {
          int nickels;
          int pennies;
 
-         //Prompt user to enter a monetary amount
+         /**
+         * Prompt user to enter a monetary amount
+         */
+         System.out.println();
          System.out.print("Enter monetary amount: ");
          monetaryAmt = scan.nextDouble();
 
-         // Convert the total dollars in monetaryAmt to total number of cents by multiplying by 100
-         // apply casting to type double monetaryAmt to get integer value of the monetaryAmt value
+         /**
+         * Convert the total dollars in monetaryAmt to total number of cents by multiplying by 100
+         * apply casting to type double monetaryAmt to get integer value of the monetaryAmt value
+         */
          countTotalCents = (int) (monetaryAmt * 100);
 
-         // Find numbers of ten dollars, five dollars, and one dollars bill
+         /**
+         * Find numbers of ten dollars, five dollars,
+         * and one dollars bill
+         */
          tenDollarsAmt = (countTotalCents / 1000); // check numbers of 10 dollar bills (=10*100 cents)
          remainder = (countTotalCents % 1000); // check remaining cents after divided by 10 dollar
          fiveDollarsAmt = (remainder / 500); // check numbers of five dollar bills (=5*100 cents)
@@ -48,7 +58,10 @@ public class MoneyConversion {
          oneDollarsAmt = (remainder / 100); // check number of one dollar bills (=1*100)
          remainder = (remainder % 100); //
 
-         // Convert remainder cents to number of quarters, dime, nickels and pennies
+         /**
+         * Convert remainder cents to number of quarters, dime,
+         * nickels and pennies
+         */
          quarters = (remainder / 25); // check number of quarters (=25 cents)
          remainder = (remainder % 25); // check remaining cents after divided by 25 cents
          dimes = (remainder / 10); // check number of dimes (=10 cents)
@@ -57,7 +70,10 @@ public class MoneyConversion {
          remainder = (remainder % 5); // check remaing cents after divided by 5 cents
          pennies = remainder;
 
-         // Printout monetary amount with the fewest bills and coins
+         /**
+         * Printout monetary amount with the fewest bills and coins
+         */
+         System.out.println();
          System.out.println("That's equivalent to: ");
          System.out.println(tenDollarsAmt + " ten dollar bills");
          System.out.println(fiveDollarsAmt + " five dollar bills");
